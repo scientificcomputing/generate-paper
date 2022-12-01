@@ -1,0 +1,15 @@
+{% set names = cookiecutter.full_name.split(' ') -%}
+{% set ns = namespace(given=names[0]) -%}
+{% for name in names[1:-1] -%}
+{% set ns.given = ns.given + " " + name-%}
+{% endfor -%}
+
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "{{names[-1]}}"
+  given-names: "{{ns.given}}"
+  orcid: "ABCD-ABCD-ACBD-ABCD"
+title: "{{cookiecutter.project_name}}"
+version: "{{cookiecutter.version}}"
+date-released: {% now 'utc', '%Y-%m-%d' %}

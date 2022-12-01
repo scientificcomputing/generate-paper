@@ -1,0 +1,40 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: {{ cookiecutter.project_name }}
+author: {{ cookiecutter.full_name }}
+logo: "docs/logo.png"
+copyright: "{% now 'utc', '%Y' %}"
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: cache
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/{{ cookiecutter.github_username}}/{{ cookiecutter.repository_name}} # Online location of your book
+  branch: main
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - dollarmath
+    - linkify
+
+sphinx:
+  extra_extensions:
+  - 'sphinx.ext.autodoc'
+  - 'sphinx.ext.napoleon'
+  - 'sphinx.ext.viewcode'
+
+  config:
+    bibtex_bibfiles: ["docs/references.bib"]
+    suppress_warnings: ["bibtex.duplicate_citation"] # If the same paper is cited in multiple files
+
+
+exclude_patterns: ["data", "hooks", "code"] 

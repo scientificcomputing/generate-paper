@@ -1,0 +1,6 @@
+name: "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"
+channels:
+  - conda-forge
+dependencies:
+  - jupyter-book
+  - python=3.10
