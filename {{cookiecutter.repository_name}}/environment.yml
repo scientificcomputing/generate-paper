@@ -4,3 +4,9 @@ channels:
 dependencies:
   - jupyter-book
   - python=3.10
+  {%- if cookiecutter.require_fenics|lower == "y" %}
+  - fenics-dolfin
+  {% endif %}
+  {%- if cookiecutter.require_fenicsx|lower == "y" %}
+  - fenics-dolfinx
+  {% endif %}

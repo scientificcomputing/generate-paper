@@ -30,3 +30,5 @@ The following options are available when using the cookiecutter:
 6. __version__: The initial version of the software.
 7. __open\_source\_license__: Choose a open source license for your code
 8. __use_pre_commit__: Set up [pre-commit hooks](https://pre-commit.com) that will run some checks
+9. __require_fenics__: Does your paper require FEniCS?
+10. __require_fenicsx__: Does your paper require FEniCSx?

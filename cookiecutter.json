@@ -11,6 +11,8 @@
     "Other"
   ],
   "use_pre_commit": "n",
+  "require_fenics": "n",
+  "require_fenicsx": "n",
   "_copy_without_render": [
     ".github/*"
   ]
