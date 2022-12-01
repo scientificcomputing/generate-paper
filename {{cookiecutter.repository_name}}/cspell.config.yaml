@@ -1,0 +1,11 @@
+dictionaryDefinitions:
+  - name: {{cookiecutter.repository_name}}
+    path: .cspell_dict.txt
+    addWords: true
+dictionaries:
+  - {{cookiecutter.repository_name}}
+ignoreWords: [
+    tableofcontents,
+    ipynb,
+    oneline
+  ]
