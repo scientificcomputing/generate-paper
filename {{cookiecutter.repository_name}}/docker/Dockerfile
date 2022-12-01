@@ -1,4 +1,4 @@
-FROM condaforge/mambaforge 
+FROM condaforge/mambaforge
 
 ENV DEBIAN_FRONTEND=noninteractive
 

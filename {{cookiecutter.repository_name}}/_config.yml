@@ -39,4 +39,4 @@ sphinx:
     suppress_warnings: ["bibtex.duplicate_citation"] # If the same paper is cited in multiple files
 
 
-exclude_patterns: ["data", "hooks", "code"] 
+exclude_patterns: ["data", "hooks", "code"]

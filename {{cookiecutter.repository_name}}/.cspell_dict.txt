@@ -1,0 +1,6 @@
+{% set names = cookiecutter.full_name.split(' ') -%}
+docname
+docnames
+{% for name in names -%}
+{{name}}
+{% endfor %}
