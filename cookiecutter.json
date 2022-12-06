@@ -1,6 +1,5 @@
 {
   "full_name": "Jørgen S. Dokken",
-  "email": "dokken@simula.no",
   "github_username": "jorgensd",
   "project_name": "Research Project 1",
   "repository_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
