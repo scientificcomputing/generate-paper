@@ -5,6 +5,7 @@ title: {{ cookiecutter.project_name }}
 author: {{ cookiecutter.full_name }}
 logo: "docs/logo.png"
 copyright: "{% now 'utc', '%Y' %}"
+only_build_toc_files: true
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -37,6 +38,13 @@ sphinx:
   config:
     bibtex_bibfiles: ["docs/references.bib"]
     suppress_warnings: ["bibtex.duplicate_citation"] # If the same paper is cited in multiple files
+    nb_execution_show_tb: True
+    html_theme_options:
+      navigation_with_keys: false
+    html_last_updated_fmt: "%b %d, %Y"
+    nb_custom_formats:  # https://jupyterbook.org/en/stable/file-types/jupytext.html#file-types-custom
+        .py:
+            - jupytext.reads
+            - fmt: py
 
-
-exclude_patterns: ["data", "hooks", "code"]
+exclude_patterns: [".pytest_cache/*", ".github/*"]
