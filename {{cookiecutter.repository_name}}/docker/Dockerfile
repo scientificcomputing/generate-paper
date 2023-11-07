@@ -1,19 +1,20 @@
-FROM condaforge/mambaforge
+FROM ubuntu:22.04
 
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEB_PYTHON_INSTALL_LAYOUT=deb_system
 
-# Install ssh (missing dependency to run conda envs)
+# Install pip and git with apt
 RUN apt-get update && \
-    apt-get install -y ssh build-essential
+    apt-get install -y python3-pip git
 
-# Upgrade mamba
-RUN mamba upgrade -y mamba
+# We upgrade pip and setuptools
+RUN python3 -m pip install --no-cache-dir pip setuptools --upgrade
 
-# Copy environment and requirements files into docker env
-COPY environment.yml .
 
-# Update environment file with new environment name
-RUN mamba env update --file environment.yml --name dockerenv
-SHELL ["mamba", "run", "-n", "dockerenv", "/bin/bash", "-c"]
+ARG REPO_BRANCH="main"
 
-RUN echo "source activate dockerenv" > ~/.bashrc
+WORKDIR /repo
+
+# Copy pyproject.toml first so that we done need to reinstall in case another file
+# is changing after rebuiding docker image
+RUN git clone --branch ${REPO_BRANCH} --single-branch https://github.com/scientificcomputing/example-paper.git
+RUN cd example-paper && python3 -m pip install --no-cache-dir -r requirements.txt && rm -rf /tmp
