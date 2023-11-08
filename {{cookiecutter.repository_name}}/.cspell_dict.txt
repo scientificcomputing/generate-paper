@@ -1,6 +1,7 @@
 {% set names = cookiecutter.full_name.split(' ') -%}
 docname
 docnames
+{{ cookiecutter.github_username }}
 {% for name in names -%}
 {{name}}
 {% endfor %}
