@@ -2,11 +2,11 @@ name: "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') 
 channels:
   - conda-forge
 dependencies:
+  - jupyter-book
   {%- if cookiecutter.require_fenics|lower == "y" %}
   - fenics-dolfin
-  {% endif -%}
+  {%- endif -%}
   {%- if cookiecutter.require_fenicsx|lower == "y" %}
   - fenics-dolfinx
-  {% endif -%}
-  - jupyter-book
+  {%- endif -%}
   - python=3.10

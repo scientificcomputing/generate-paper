@@ -31,4 +31,4 @@ sphinx:
   - 'sphinx.ext.napoleon'
   - 'sphinx.ext.viewcode'
 
-exclude_patterns: ["**cookiecutter.repository_name**"] 
+exclude_patterns: ["**cookiecutter.repository_name**"]
