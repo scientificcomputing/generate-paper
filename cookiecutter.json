@@ -10,6 +10,7 @@
     "CC-BY-4.0",
     "Other"
   ],
+  "is_package": "n",
   "use_pre_commit": "n",
   "use_conda": "n",
   "use_docker": "n",

@@ -1,6 +1,6 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=64.4.0", "wheel", "pip>=22.3"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "my-paper"
@@ -27,6 +27,12 @@ docs = [
     "jupytext",
     "sphinxcontrib-bibtex",
 ]
+
+{%- if cookiecutter.is_package|lower == "n" %}
+# Needed for editable install with no package
+[tool.setuptools]
+packages = []
+{% endif %}
 
 {%- if cookiecutter.use_pre_commit|lower == "y" %}
 [tool.ruff]
