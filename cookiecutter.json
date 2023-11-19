@@ -5,11 +5,12 @@
   "repository_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "version": "0.1.0",
   "open_source_license": [
-    "CC-BY-4.0",
     "MIT",
     "GPL-3.0",
+    "CC-BY-4.0",
     "Other"
   ],
+  "is_package": "n",
   "use_pre_commit": "n",
   "use_conda": "n",
   "use_docker": "n",
