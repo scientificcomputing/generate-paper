@@ -3,13 +3,23 @@ requires = ["setuptools>=64.4.0", "wheel", "pip>=22.3"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "my-paper"
-classifiers = ["Private :: Do Not Upload"]
-version = "0"
+name = "{{ cookiecutter.repository_name }}"
+version = "{{ cookiecutter.version }}"
+authors = [{name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}"}]
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">=3.8.0"
 # Generate requirements.txt using
 # pip-compile --output-file=requirements.txt pyproject.toml
 dependencies = [
 ]
+
+[project.urls]
+Homepage = "https://{{ cookiecutter.github_username}}.github.io/{{ cookiecutter.repository_name}}"
+Documentation = "https://{{ cookiecutter.github_username}}.github.io/{{ cookiecutter.repository_name}}"
+Source = "https://github.com/{{ cookiecutter.github_username}}/{{ cookiecutter.repository_name}}"
+Tracker = "https://github.com/{{ cookiecutter.github_username}}/{{ cookiecutter.repository_name}}/issues"
+
 
 
 [project.optional-dependencies]
@@ -26,6 +36,10 @@ docs = [
     "jupyter-book",
     "jupytext",
     "sphinxcontrib-bibtex",
+]
+all = [
+    "{{ cookiecutter.repository_name }}[dev]",
+    "{{ cookiecutter.repository_name }}[docs]",
 ]
 
 {%- if cookiecutter.is_package|lower == "n" %}
