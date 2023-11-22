@@ -37,12 +37,5 @@ Add steps for running simulations, ...
 Add steps for postprocessing / reproducing figures and tables in the paper, ...
 
 
-
-## References
-```{bibliography}
-:filter: docname in docnames
-```
-
-
 ## Having issues
 If you have any troubles please file and issue in the GitHub repository.
