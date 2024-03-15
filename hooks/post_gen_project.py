@@ -9,7 +9,7 @@ REMOVE_PATHS = [
     ".cspell_dict.txt",
     {% endif %}
     {%- if cookiecutter.use_conda|lower != "y" %}
-    'evironment.yml',
+    'environment.yml',
     {% endif %}
     {%- if cookiecutter.use_docker|lower != "y" %}
     'docker',
